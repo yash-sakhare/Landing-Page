@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Billing & Payment System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                🏨 <span>GrandStay</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#billing">Billing</a></li>
+                <li><a href="#payment">Payment</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+
+            <a href="#billing" class="nav-btn">Generate Bill</a>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="tag">SMART HOTEL MANAGEMENT</span>
+
+            <h1>
+                Hotel Billing & 
+                <span>Payment System</span>
+            </h1>
+
+            <p>
+                Manage hotel room charges, food bills, additional services
+                and payments quickly and securely from one simple system.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#billing" class="primary-btn">
+                    Generate Bill →
+                </a>
+
+                <a href="#payment" class="secondary-btn">
+                    Make Payment
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="card-top">
+                <span>Current Bill</span>
+                <span>INV-2026</span>
+            </div>
+
+            <h2>₹5,500</h2>
+
+            <div class="bill-line">
+                <span>Room Charges</span>
+                <strong>₹4,000</strong>
+            </div>
+
+            <div class="bill-line">
+                <span>Food & Services</span>
+                <strong>₹1,300</strong>
+            </div>
+
+            <div class="bill-line">
+                <span>Tax</span>
+                <strong>₹200</strong>
+            </div>
+
+            <div class="paid">
+                ✓ Payment Ready
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features" id="features">
+
+        <div class="section-title">
+            <span>FEATURES</span>
+            <h2>Everything You Need</h2>
+            <p>
+                Simple tools for managing hotel billing and payments.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="icon">🏨</div>
+                <h3>Room Billing</h3>
+                <p>
+                    Automatically calculate room charges based on
+                    stay duration and room type.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🍽️</div>
+                <h3>Food Billing</h3>
+                <p>
+                    Add restaurant and food charges directly to
+                    the customer's hotel bill.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">💳</div>
+                <h3>Easy Payment</h3>
+                <p>
+                    Support UPI, card and cash payment options.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🧾</div>
+                <h3>Instant Invoice</h3>
+                <p>
+                    Generate a professional invoice instantly
+                    after completing payment.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Billing Section -->
+    <section class="billing-section" id="billing">
+
+        <div class="section-title">
+            <span>BILLING</span>
+            <h2>Generate Hotel Bill</h2>
+            <p>Enter customer and service details below.</p>
+        </div>
+
+        <div class="billing-container">
+
+            <!-- Form -->
+            <div class="billing-form">
+
+                <h3>Customer Details</h3>
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Customer Name</label>
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter customer name"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Room Number</label>
+                        <input
+                            type="text"
+                            id="roomNumber"
+                            placeholder="e.g. 205"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Check-in Date</label>
+                        <input type="date" id="checkin">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Check-out Date</label>
+                        <input type="date" id="checkout">
+                    </div>
+
+                </div>
+
+
+                <h3>Charges</h3>
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Room Charges (₹)</label>
+                        <input
+                            type="number"
+                            id="roomCharge"
+                            placeholder="4000"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Food Charges (₹)</label>
+                        <input
+                            type="number"
+                            id="foodCharge"
+                            placeholder="1000"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Service Charges (₹)</label>
+                        <input
+                            type="number"
+                            id="serviceCharge"
+                            placeholder="300"
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label>Tax (₹)</label>
+                        <input
+                            type="number"
+                            id="tax"
+                            placeholder="200"
+                        >
+                    </div>
+
+                </div>
+
+                <button class="generate-btn" onclick="generateBill()">
+                    Generate Bill
+                </button>
+
+            </div>
+
+
+            <!-- Bill Preview -->
+            <div class="bill-preview">
+
+                <div class="invoice-header">
+                    <div>
+                        <h2>GrandStay</h2>
+                        <p>Hotel & Resort</p>
+                    </div>
+
+                    <span>INVOICE</span>
+                </div>
+
+                <hr>
+
+                <div class="customer-info">
+
+                    <div>
+                        <small>Customer</small>
+                        <strong id="billCustomer">Guest</strong>
+                    </div>
+
+                    <div>
+                        <small>Room</small>
+                        <strong id="billRoom">---</strong>
+                    </div>
+
+                </div>
+
+                <div class="bill-items">
+
+                    <div>
+                        <span>Room Charges</span>
+                        <strong id="billRoomCharge">₹0</strong>
+                    </div>
+
+                    <div>
+                        <span>Food Charges</span>
+                        <strong id="billFoodCharge">₹0</strong>
+                    </div>
+
+                    <div>
+                        <span>Service Charges</span>
+                        <strong id="billServiceCharge">₹0</strong>
+                    </div>
+
+                    <div>
+                        <span>Tax</span>
+                        <strong id="billTax">₹0</strong>
+                    </div>
+
+                </div>
+
+                <div class="total">
+
+                    <span>Total Amount</span>
+
+                    <strong id="grandTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+                <div class="invoice-status">
+                    UNPAID
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Payment Section -->
+    <section class="payment-section" id="payment">
+
+        <div class="section-title">
+            <span>PAYMENT</span>
+            <h2>Complete Payment</h2>
+            <p>Select your preferred payment method.</p>
+        </div>
+
+        <div class="payment-container">
+
+            <div class="payment-summary">
+
+                <h3>Payment Summary</h3>
+
+                <div class="summary-line">
+                    <span>Hotel Bill</span>
+                    <strong id="paymentAmount">₹0</strong>
+                </div>
+
+                <div class="summary-line">
+                    <span>Payment Status</span>
+                    <strong id="paymentStatus">
+                        Unpaid
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="payment-method">
+
+                <h3>Select Payment Method</h3>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="UPI">
+                    <span>📱 UPI</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Card">
+                    <span>💳 Debit / Credit Card</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Cash">
+                    <span>💵 Cash</span>
+                </label>
+
+                <button class="pay-btn" onclick="makePayment()">
+                    Pay Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Process -->
+    <section class="process">
+
+        <div class="section-title">
+            <span>PROCESS</span>
+            <h2>How Hotel Billing Works</h2>
+        </div>
+
+        <div class="process-grid">
+
+            <div>
+                <div class="process-number">01</div>
+                <h3>Check-in</h3>
+                <p>Register the customer and assign a room.</p>
+            </div>
+
+            <div>
+                <div class="process-number">02</div>
+                <h3>Add Services</h3>
+                <p>Add food and additional hotel services.</p>
+            </div>
+
+            <div>
+                <div class="process-number">03</div>
+                <h3>Generate Bill</h3>
+                <p>Calculate the complete hotel bill.</p>
+            </div>
+
+            <div>
+                <div class="process-number">04</div>
+                <h3>Payment</h3>
+                <p>Complete payment and generate receipt.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h2>🏨 GrandStay</h2>
+                <p>
+                    Smart Hotel Billing & Payment Management System.
+                </p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#billing">Billing</a>
+                <a href="#payment">Payment</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 GrandStay Hotel Billing System
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
